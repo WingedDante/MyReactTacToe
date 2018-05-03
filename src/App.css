@@ -78,5 +78,9 @@ ol, ul {
 .game-info {
   margin-left: 20px;
 }
+.game-board{
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* ------------------------------------------------------------------------------------------- */
