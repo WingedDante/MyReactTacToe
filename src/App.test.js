@@ -4,7 +4,7 @@ import  App from './App';
 import { shallow, configure, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import renderer from 'react-test-renderer';
-import Square from './components/Square';
+import Square from './components/Square/Square';
 import Board from './components/Board';
 
 const mockFN = jest.fn();
@@ -16,17 +16,7 @@ describe('App', () => {
     ReactDOM.render(<App />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
-});
 
-describe('Square', () => {
-  it('should display x when clicked', () => {
-    //ARRANGE
-    const output = shallow(<Square onClick={mockFN}/>);
-    //ACT
-    output.simulate('click');
-    //ASSERT
-    expect(mockFN).toHaveBeenCalled();
-  })
 });
 
 describe('Board', () => {

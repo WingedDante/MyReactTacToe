@@ -1,6 +1,8 @@
 import React from 'react';
-import Square from './Square';
-
+import Square from './Square/Square';
+/**
+ * Board Component that renderes a board of Squares
+ */
 class Board extends React.Component {
 
     constructor(props){
@@ -10,8 +12,9 @@ class Board extends React.Component {
         xIsNext: true
       }
     }
-  
+    /** Function that handles the click event of individual Squares */
     handleClick(i){
+      /** Function that handles the click event of individual Squares */
       const squares = this.state.squares.slice();
       if (calculateWinner(squares) || squares[i]){
         return;

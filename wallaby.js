@@ -1,5 +1,6 @@
-module.exports = function (wallaby) {
 
+
+module.exports = function (wallaby) {
     // Babel, jest-cli and some other modules may be located under
     // react-scripts/node_modules, so need to let node.js know about it
     var path = require('path');
@@ -11,11 +12,30 @@ module.exports = function (wallaby) {
     require('module').Module._initPaths();
   
     return {
-      files: [
-        'src/**/*.+(js|jsx|json|snap|css|less|sass|scss|jpg|jpeg|gif|png|svg)',
-        '!src/**/*.test.js?(x)'
-      ],
-  
+       files: [
+          'src/**/*.+(js|jsx|json|snap|css|less|sass|scss|jpg|jpeg|gif|png|svg)',
+         '!src/**/*.test.js?(x)'
+       ],
+      
+       filesWithNoCoverageCalculated: [
+        "**/node_modules/**",
+        "**/vendor/**",
+        "**/src/index.js**",
+        "**/src/registerServiceWorker.js**",
+        "**/coverage/**",
+        "**/wallaby.js**",
+        "**src/**/*.test.js?(x)**"
+       ],
+
+      // filesWithNoCoverageCalculated: [
+      //   "**/node_modules/**", 
+      //   "**/vendor/**", 
+      //   "**/src/index.js**", 
+      //   "**/src/registerServiceWorker.js**",
+      //   "**/coverage/**",
+      //   "**/wallaby.js**"
+      // ],
+
       tests: ['src/**/*.test.js?(x)'],
   
       env: {

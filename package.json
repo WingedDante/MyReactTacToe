@@ -14,5 +14,20 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/vendor/**",
+      "!**/src/index.js**",
+      "!**/src/registerServiceWorker.js**",
+      "!**/coverage/**",
+      "!**/wallaby.js**",
+      "!**src/**/*.test.js?(x)**"
+    ]
+  },
+  "devDependencies": {
+    "react-styleguidist": "^7.0.9"
   }
 }
