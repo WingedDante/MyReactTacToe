@@ -1,5 +1,5 @@
 ```js
-require('./Square.css');
+//require('./Square.css');
 
 class SquareExample extends React.Component {
   constructor() {

@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+require('./Square.css');
+
 /**
  * Square Component that renderes a button used in the game
  */
