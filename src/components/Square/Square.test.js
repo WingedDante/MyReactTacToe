@@ -4,8 +4,8 @@ import  App from '../../App';
 import { shallow, configure, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import renderer from 'react-test-renderer';
-import Square from './Square';
-import Board from '../../components/Board';
+import Square from '../Square/Square';
+import Board from '../Board/Board';
 
 const mockFN = jest.fn();
 configure({ adapter: new Adapter() });
