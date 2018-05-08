@@ -5,7 +5,7 @@ import { shallow, configure, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import renderer from 'react-test-renderer';
 import Square from '../Square/Square';
-import Board from '../Board/Board';
+import Game from '../Game/Game';
 
 const mockFN = jest.fn();
 configure({ adapter: new Adapter() });
@@ -19,16 +19,19 @@ describe('Square', () => {
       //ASSERT
       expect(mockFN).toHaveBeenCalled();
     });
+    
     it('displays x first when clicked ', () => {
        //ARRANGE
        //const spy = jest.spyOn(Board.prototype, 'handleClick');
-       const board = shallow(<Board />);
-       const instance  = board.instance();
+       const game = shallow(<Game />);
+       const instance  = game.instance();
        instance.setState({
-         squares: Array(9).fill(null),
+        history: [{
+          squares: Array(9).fill(null)
+        }],
          xIsNext: true
        });
-       const testSquare = shallow(<Square value={instance.state.squares[0]} onClick={()=> instance.handleClick(0)}/>);
+       const testSquare = shallow(<Square value={instance.state.history[instance.state.history.length-1].squares[0]} onClick={()=> instance.handleClick(0)}/>);
    
        //ACT
        testSquare.simulate('click');
@@ -36,9 +39,9 @@ describe('Square', () => {
        //ASSERT
        //expect(spy).toHaveBeenCalled();
        //console.log(testSquare.render().text());
-       let ex = instance.state.squares[0];
+       let ex = instance.state.history[instance.state.history.length -1].squares[0];
   
-       expect(instance.state.squares[0]).toBe('X');
+       expect(instance.state.history[instance.state.history.length -1].squares[0]).toBe('X');
     });
   
   });

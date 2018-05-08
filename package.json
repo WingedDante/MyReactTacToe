@@ -24,7 +24,8 @@
       "!**/src/registerServiceWorker.js**",
       "!**/coverage/**",
       "!**/wallaby.js**",
-      "!**src/**/*.test.js?(x)**"
+      "!**src/**/*.test.js?(x)**",
+      "!**/build/**"
     ]
   },
   "devDependencies": {
